@@ -1,6 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/nav_graph">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
 
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.gamil.moahear.razavimathexam1401_1402.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_playVideoFragment"
+            app:destination="@id/playVideoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/playVideoFragment"
+        android:name="com.gamil.moahear.razavimathexam1401_1402.PlayVideoFragment"
+        android:label="fragment_play_video"
+        tools:layout="@layout/fragment_play_video" >
+        <argument
+            android:name="questionVideoUrl1"
+            app:argType="string"
+            android:defaultValue="" />
+        <argument
+            android:name="questionVideoUrl2"
+            app:argType="string"
+            android:defaultValue="" />
+    </fragment>
 </navigation>
